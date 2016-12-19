@@ -43,6 +43,9 @@ func (o *option) Type() reflect.Kind {
 }
 
 func (o *option) Description() string {
+	if len(o.description) == 0 {
+		return ""
+	}
 	if o.description[len(o.description)-1] != '.' {
 		o.description += "."
 	}

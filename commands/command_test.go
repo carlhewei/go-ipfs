@@ -194,3 +194,8 @@ func TestHelpProcessing(t *testing.T) {
 		t.Error("LongDescription was not set on basis of ShortDescription")
 	}
 }
+
+func TestLackOfDescriptionOfOptionDoesNotPanic(t *testing.T) {
+	opt := BoolOption("a", "")
+	opt.Description()
+}
